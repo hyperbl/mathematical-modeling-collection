@@ -1,0 +1,12 @@
+[project]
+name = "mcm"
+version = "0.1.0"
+description = "Toolbox for CUMCM"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "scipy>=1.16.0",
+    "matplotlib>=3.10.0",
+    "statsmodels>=0.14.5",
+    "salib>=1.5.1",
+]

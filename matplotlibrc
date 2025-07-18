@@ -1,0 +1,12 @@
+# This is a configuration file for Matplotlib.
+# It sets various parameters for plotting.
+
+# Use LaTeX for text rendering
+# text.usetex: True
+# text.latex.unicode: True
+# text.latex.preamble: \usepackage{xeCJK}
+
+# Set the font family to enable Chinese characters
+font.family: sans-serif
+font.sans-serif: SimSun, Times New Roman
+axes.unicode_minus: False
