@@ -1,5 +1,5 @@
 # SA.py -- 灵敏度分析模板
-from typing import Dict, Tuple, Any, Protocol
+from typing import Dict, Any, Protocol
 import numpy as np
 from SALib import ProblemSpec
 from SALib.sample.sobol import sample as sobol_sample
@@ -84,3 +84,38 @@ class SA(object):
         if self.sp is None:
             raise ValueError("请先运行 `run` 方法以生成分析结果。")
         self.sp.heatmap()
+
+def _main() -> None:
+    """主函数示例，供测试和演示使用
+    """
+    from SALib.test_functions import Ishigami
+    import matplotlib.pyplot as plt
+    import warnings
+    # 忽略未来警告
+    warnings.filterwarnings("ignore", category=FutureWarning)
+    
+    class MyModel():
+        def evaluate(self, X: np.ndarray, A: float = 7, B: float = 0.1) -> np.ndarray:
+            return Ishigami.evaluate(X, A, B)
+    
+    problem: Dict[str, Any] = {
+        "names": ["x1", "x2", "x3"],
+        "bounds": [[-np.pi, np.pi]] * 3,
+        "outputs": ["y1"]
+    }
+    model = MyModel()
+
+    sa = SA(model, problem)
+
+    # 运行灵敏度分析
+    sa.run()
+
+    # 打印分析结果
+    sa.print_results()
+
+    # 绘制热力图
+    sa.heatmap()
+    plt.show()
+
+if __name__ == "__main__":
+    _main()

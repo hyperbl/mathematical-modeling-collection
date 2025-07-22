@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# marimo files
+__marimo__/
+*.slides.json
