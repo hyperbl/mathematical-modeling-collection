@@ -217,7 +217,7 @@ def _(interpolate_irregular2D, mo):
 def _(np, plt):
     def interpolate_irregular2D():
         from scipy.interpolate import NearestNDInterpolator
-    
+
         # 数据
         x = np.array([
             129, 140, 103.5, 88, 185.5, 195, 105, 157.5, 107.5, 77, 81, 162, 162, 117.5
@@ -228,38 +228,38 @@ def _(np, plt):
         z = -np.array([
             4, 8, 6, 8, 6, 8, 8, 9, 9, 8, 8, 9, 4, 9
         ])
-    
+
         xy = np.vstack([x, y]).T
-    
+
         # 插值点
         xx = np.linspace(x.min(), x.max(), 100)
         yy = np.linspace(y.min(), y.max(), 100)
         xnew, ynew = np.meshgrid(xx, yy)
-    
+
         # 采用最邻近点插值
         interp = NearestNDInterpolator(xy, z)
-    
+
         znew = interp(xnew, ynew)
-    
+
         # 可视化
         plt.figure(figsize=(8, 4))
-    
+
         ax0 = plt.subplot(121, projection="3d")
         ax1 = plt.subplot(122)
-    
+
         # 地形图
         ax0.plot_surface(xnew, ynew, znew, cmap="viridis")
         ax0.set_xlabel("$x$")
         ax0.set_ylabel("$y$")
         ax0.set_zlabel("$z$")
         ax0.set_title("地形图")
-    
+
         contour = ax1.contour(xnew, ynew, znew, 8)
         ax1.clabel(contour)
         ax1.set_xlabel("$x$")
         ax1.set_ylabel("$y$")
         ax1.set_title("等高线图")
-    
+
         return ax0
     return (interpolate_irregular2D,)
 
@@ -278,7 +278,7 @@ def _(mo):
 
     也可以使用机器学习库中的回归模型。
 
-    此处就省略了。
+    此处就省略了，例子可以从 mcm2019 项目中找到（ sklearn 实现）。
     """
     )
     return
