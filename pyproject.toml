@@ -8,14 +8,14 @@ dependencies = [
     "statsmodels>=0.14.5",
     "salib>=1.5.1",
     "seaborn>=0.13.2",
-    "matplotlib>=3.10.3",
-    "scipy>=1.16.0",
-    "numpy>=2.3.1",
+    "matplotlib>=3.10.5",
+    "scipy>=1.16.1",
+    "numpy>=2.3.2",
     "cvxpy[glpk]>=1.7.1",
-    "polars>=1.31.0",
+    "polars>=1.32.0",
 ]
 
 [dependency-groups]
 dev = [
-    "marimo[lsp]>=0.14.12",
+    "marimo[lsp]>=0.14.16",
 ]
