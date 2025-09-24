@@ -20,7 +20,7 @@
 2. 克隆仓库并安装依赖：
 ```bash
 git clone https://github.com/hyperbl/mathematical-modeling-collection.git
-cd MCM
+cd mathematical-modeling-collection
 uv sync
 ```
 
