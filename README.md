@@ -1,4 +1,4 @@
-# MCM - 数学建模常用模型集合
+# mathematical-modeling-collection - 数学建模常用模型集合
 
 > 用于记录和整理数学建模竞赛中的常用模型、算法和解决方案
 
